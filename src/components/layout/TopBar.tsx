@@ -10,7 +10,7 @@ import { Input } from '../ui/Input';
 
 const TopBar: React.FC = () => {
   const { darkMode, toggleDarkMode } = useUIStore();
-  const { user, signOut } = useAuthStore();
+  const { user, profile, signOut } = useAuthStore();
   const { activeWorkspace } = useProjectStore();
   const { notifications, unreadCount, fetchNotifications, markAsRead, subscribeToNotifications } = useNotificationStore();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -46,7 +46,9 @@ const TopBar: React.FC = () => {
     return path.charAt(0).toUpperCase() + path.slice(1);
   };
 
-  const userInitial = user?.user_metadata?.full_name?.[0] || user?.email?.[0] || 'U';
+  const displayName = profile?.name || user?.user_metadata?.full_name || 'My Account';
+  const userInitial = displayName?.[0] || user?.email?.[0] || 'U';
+  const avatarUrl = profile?.avatar_url || user?.user_metadata?.avatar_url;
 
   return (
     <header className="h-24 border-b border-border/30 bg-transparent px-8 flex items-center justify-between sticky top-0 z-10 backdrop-blur-sm">
@@ -142,14 +144,14 @@ const TopBar: React.FC = () => {
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center border border-primary/20 shadow-premium shrink-0 group-hover:scale-105 transition-transform">
-              {user?.user_metadata?.avatar_url ? (
-                <img src={user.user_metadata.avatar_url} alt="Avatar" className="w-full h-full object-cover rounded-xl" />
+              {avatarUrl ? (
+                <img src={avatarUrl} alt="Avatar" className="w-full h-full object-cover rounded-xl" />
               ) : (
                 <span className="text-white font-bold text-sm">{userInitial.toUpperCase()}</span>
               )}
             </div>
             <div className="text-left hidden lg:block overflow-hidden max-w-[120px]">
-              <p className="text-xs font-bold text-text-primary truncate">{user?.user_metadata?.full_name || 'My Account'}</p>
+              <p className="text-xs font-bold text-text-primary truncate">{displayName}</p>
               <p className="text-[10px] text-text-muted truncate">@{user?.email?.split('@')[0]}</p>
             </div>
           </button>
@@ -157,7 +159,7 @@ const TopBar: React.FC = () => {
           {menuOpen && (
             <div className="absolute right-0 mt-3 w-64 bg-surface/95 backdrop-blur-2xl rounded-2xl shadow-premium border border-border/50 overflow-hidden py-2 animate-slide-up origin-top-right">
               <div className="px-5 py-4 border-b border-border/50">
-                <p className="text-sm font-bold text-text-primary truncate">{user?.user_metadata?.full_name}</p>
+                <p className="text-sm font-bold text-text-primary truncate">{displayName}</p>
                 <p className="text-xs text-text-muted truncate mt-0.5">{user?.email}</p>
               </div>
               <div className="p-2 space-y-1">

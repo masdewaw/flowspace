@@ -9,7 +9,7 @@ import WorkspaceModal from '../components/project/WorkspaceModal';
 
 const Workspaces: React.FC = () => {
   const { workspaces, fetchWorkspaces, setActiveWorkspace, loading } = useProjectStore();
-  const { user } = useAuthStore();
+  const { user, profile } = useAuthStore();
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -53,7 +53,7 @@ const Workspaces: React.FC = () => {
             </div>
             <h1 className="text-display text-5xl md:text-6xl">Choose your space</h1>
             <p className="text-text-secondary text-xl max-w-xl">
-              Welcome back, <span className="text-text-primary font-bold">{user?.user_metadata?.full_name?.split(' ')[0] || 'Explorer'}</span>. Select a workspace to continue your progress.
+              Welcome back, <span className="text-text-primary font-bold">{(profile?.name || user?.user_metadata?.full_name || 'Explorer').split(' ')[0]}</span>. Select a workspace to continue your progress.
             </p>
           </motion.div>
           
