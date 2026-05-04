@@ -5,7 +5,7 @@ import { supabase } from '../lib/supabase';
 interface Profile {
   id: string;
   email: string;
-  full_name: string | null;
+  name: string | null;
   avatar_url: string | null;
 }
 
@@ -21,7 +21,7 @@ interface AuthState {
   signOut: () => Promise<void>;
 }
 
-export const useAuthStore = create<AuthState>((set) => ({
+export const useAuthStore = create<AuthState>((set, get) => ({
   session: null,
   user: null,
   profile: null,
