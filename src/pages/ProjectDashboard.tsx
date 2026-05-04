@@ -54,7 +54,7 @@ const ProjectDashboard: React.FC = () => {
           <Building2 className="w-16 h-16 text-primary" />
         </motion.div>
         <div className="space-y-4">
-          <h1 className="text-display text-5xl">Welcome to FlowSpace</h1>
+          <h1 className="text-display text-5xl">Welcome to FlowSpace7</h1>
           <p className="text-text-secondary text-xl leading-relaxed">
             Every great project starts with a dedicated space. Create your first workspace to begin your high-performance journey.
           </p>
@@ -170,7 +170,7 @@ const ProjectDashboard: React.FC = () => {
               <div className="space-y-2 mb-8">
                 <h3 className="text-h2 text-text-primary group-hover:text-primary transition-colors leading-tight">{project.name}</h3>
                 <p className="text-text-secondary text-sm line-clamp-2 leading-relaxed">
-                  {project.description || 'Elevate your project execution with FlowSpace tracking.'}
+                  {project.description || 'Elevate your project execution with FlowSpace7 tracking.'}
                 </p>
               </div>
 

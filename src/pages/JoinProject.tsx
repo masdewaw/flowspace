@@ -97,7 +97,7 @@ const JoinProject: React.FC = () => {
 
             <div className="bg-surface-2/50 p-6 rounded-[2rem] border border-border/30 space-y-4">
               <p className="text-sm text-text-secondary leading-relaxed">
-                {project.description || 'You have been invited to collaborate on this project in FlowSpace.'}
+                {project.description || 'You have been invited to collaborate on this project in FlowSpace7.'}
               </p>
               <div className="flex items-center justify-center space-x-4 text-xs font-bold text-text-muted uppercase tracking-widest">
                 <div className="flex items-center">

@@ -58,7 +58,7 @@ const Register: React.FC = () => {
         >
           <div className="space-y-3">
             <h2 className="text-display text-4xl">Create Account</h2>
-            <p className="text-text-secondary text-lg">Join FlowSpace and start organizing today.</p>
+            <p className="text-text-secondary text-lg">Join FlowSpace7 and start organizing today.</p>
           </div>
           
           <form className="space-y-5" onSubmit={handleRegister}>

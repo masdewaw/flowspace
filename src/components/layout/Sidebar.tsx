@@ -48,7 +48,7 @@ const Sidebar: React.FC = () => {
             <span className="text-white font-bold text-xl tracking-tighter">F</span>
           </div>
           {!sidebarCollapsed && (
-            <span className="ml-3 font-bold text-h2 text-text-primary tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-text-primary to-text-secondary">FlowSpace</span>
+            <span className="ml-3 font-bold text-h2 text-text-primary tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-text-primary to-text-secondary">FlowSpace7</span>
           )}
         </div>
 

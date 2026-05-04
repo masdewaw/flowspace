@@ -53,7 +53,7 @@ const TopBar: React.FC = () => {
       {/* Left: Breadcrumbs */}
       <div className="flex items-center space-x-2 text-sm">
         <Link to="/dashboard" className="text-text-muted hover:text-text-primary transition-colors font-medium">
-          {activeWorkspace?.name || 'FlowSpace'}
+          {activeWorkspace?.name || 'FlowSpace7'}
         </Link>
         <ChevronRight className="w-4 h-4 text-text-muted/50" />
         <span className="text-text-primary font-bold">{getPageTitle()}</span>

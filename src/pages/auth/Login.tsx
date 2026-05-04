@@ -157,7 +157,7 @@ const Login: React.FC = () => {
           </form>
 
           <div className="text-center text-text-secondary font-medium">
-            New to FlowSpace?{' '}
+            New to FlowSpace7?{' '}
             <Link 
               to={`/auth/register${window.location.search}`} 
               className="text-primary hover:underline font-bold"
